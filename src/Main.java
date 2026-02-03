@@ -4,8 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner dig = new Scanner(System.in);
         Calificacion nota = new Calificacion();
+
+        //Elegir el numero de notas a guardar
         System.out.println("numero de notas: ");
         String[] notas = new String[dig.nextInt()];
+
+        //almacenando las notas en el arreglo
         nota.calificacion(notas);
         for (String datos : notas) {
             System.out.print("["+datos+"]");
