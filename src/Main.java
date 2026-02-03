@@ -11,9 +11,20 @@ public class Main {
             System.out.println(datos);
         }
         String[] reprobados = nota.desaprobado(notas);
-        System.out.println("notas menores a 4: ");
+        System.out.println("Reprobados: ");
         for (String r : reprobados) {
             System.out.println(r);
         }
+        String[] aprobados = nota.aprobado(notas);
+        System.out.println("Aprobados: ");
+        for (String r : aprobados) {
+            System.out.println(r);
+        }
+        String[] excelente = nota.excelente(notas);
+        System.out.println("Excelentes: ");
+        for (String r : excelente) {
+            System.out.println(r);
+        }
+
     }
 }

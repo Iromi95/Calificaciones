@@ -29,6 +29,39 @@ public class Calificacion {
         }
         return desaprobados;
     }
-
+    public String[] aprobado(String[] nota){
+        int cont = 0;
+        for (int i = 0; i < nota.length; i++) {
+            if (Integer.parseInt(nota[i]) >= 4) {
+                cont++;
+            }
+        }
+        String[] aprobados =  new String[cont];
+        int j = 0;
+        for (int i =0; i < nota.length; i++) {
+            if (Integer.parseInt(nota[i]) >= 4) {
+               aprobados[j] = nota[i];
+                j++;
+            }
+        }
+        return aprobados;
+    }
+    public String[] excelente(String[] nota){
+        int cont = 0;
+        for (int i = 0; i < nota.length; i++) {
+            if (Integer.parseInt(nota[i]) == 10) {
+                cont++;
+            }
+        }
+        String[] excelente =  new String[cont];
+        int j = 0;
+        for (int i =0; i < nota.length; i++) {
+            if (Integer.parseInt(nota[i]) == 10) {
+                excelente[j] = nota[i];
+                j++;
+            }
+        }
+        return excelente;
+    }
 
 }
