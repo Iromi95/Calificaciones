@@ -8,23 +8,35 @@ public class Main {
         String[] notas = new String[dig.nextInt()];
         nota.calificacion(notas);
         for (String datos : notas) {
-            System.out.println(datos);
+            System.out.print("["+datos+"]");
         }
+        System.out.println("");
         String[] reprobados = nota.desaprobado(notas);
-        System.out.println("Reprobados: ");
+        Double repro = nota.promedio(reprobados);
+        System.out.println("Reprobados: " + reprobados.length+ " Promedio: " + repro);
         for (String r : reprobados) {
-            System.out.println(r);
+            System.out.print("["+r+"]");
         }
-        String[] aprobados = nota.aprobado(notas);
-        System.out.println("Aprobados: ");
-        for (String r : aprobados) {
-            System.out.println(r);
+        System.out.println("");
+        String[] aprobadosexcel = nota.aprobado(notas);
+        Double aprobexcel = nota.promedio(aprobadosexcel);
+        System.out.println("aprobados menores a 8: " + aprobadosexcel.length + " Promedio: " + aprobexcel);
+        for (String r : aprobadosexcel) {
+            System.out.print("["+r+"]");
         }
+        System.out.println("");
         String[] excelente = nota.excelente(notas);
-        System.out.println("Excelentes: ");
+        Double excel = nota.promedio(excelente);
+        System.out.println("Excelentes: " + excelente.length+ " Promedio: " + excel);
         for (String r : excelente) {
-            System.out.println(r);
+            System.out.print("["+r+"]");
         }
-
+        System.out.println("");
+        String[] aprobados = nota.aprobadoExc(notas);
+        Double aprob = nota.promedio(aprobados);
+        System.out.println("todos los aprobados: " + aprobados.length + " Promedio: " + aprob);
+        for (String r : aprobados) {
+            System.out.print("["+r+"]");
+        }
     }
 }

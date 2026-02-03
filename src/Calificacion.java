@@ -29,7 +29,7 @@ public class Calificacion {
         }
         return desaprobados;
     }
-    public String[] aprobado(String[] nota){
+    public String[] aprobadoExc(String[] nota){
         int cont = 0;
         for (int i = 0; i < nota.length; i++) {
             if (Integer.parseInt(nota[i]) >= 4) {
@@ -46,22 +46,46 @@ public class Calificacion {
         }
         return aprobados;
     }
+    public String[] aprobado(String[] nota){
+        int cont = 0;
+        for (int i = 0; i < nota.length; i++) {
+            if (Integer.parseInt(nota[i]) >= 4 && Integer.parseInt(nota[i]) < 8) {
+                cont++;
+            }
+        }
+        String[] aprobados =  new String[cont];
+        int j = 0;
+        for (int i =0; i < nota.length; i++) {
+            if (Integer.parseInt(nota[i]) >= 4 && Integer.parseInt(nota[i]) < 8) {
+                aprobados[j] = nota[i];
+                j++;
+            }
+        }
+        return aprobados;
+    }
     public String[] excelente(String[] nota){
         int cont = 0;
         for (int i = 0; i < nota.length; i++) {
-            if (Integer.parseInt(nota[i]) == 10) {
+            if (Integer.parseInt(nota[i]) > 7) {
                 cont++;
             }
         }
         String[] excelente =  new String[cont];
         int j = 0;
         for (int i =0; i < nota.length; i++) {
-            if (Integer.parseInt(nota[i]) == 10) {
+            if (Integer.parseInt(nota[i]) > 7) {
                 excelente[j] = nota[i];
                 j++;
             }
         }
         return excelente;
+    }
+    public double promedio(String[] nota){
+        double suma = 0;
+        for (int i = 0; i < nota.length; i++) {
+            suma += Double.parseDouble(nota[i]);
+        }
+        return suma/ nota.length;
     }
 
 }
